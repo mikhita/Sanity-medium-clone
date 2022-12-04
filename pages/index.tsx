@@ -5,7 +5,7 @@ import Header from '../components/Header'
 
 export default function  Home () {
   return (
-    <div className="">
+    <div className="max-w-7xl mx-auto">
       <Head>
         <title>Medium clone</title>
         <link rel="icon" href="/favicon.ico" />
@@ -13,7 +13,11 @@ export default function  Home () {
 
      <Header/>
 
-     <div>
+     <div className='flex justify-between 
+     items-center
+     bg-yellow-400 border-y-black
+     py-10
+     lg:py-0'>
       <div className='px-10 space-x-5'>
         <h1 className='text-6xl max-w-xl font-serif'>
           <span className='underline decoration-black 
@@ -23,7 +27,12 @@ export default function  Home () {
           topic and connect with millions of readers.
         </h2>
       </div>
-      <div></div>
+      <div>
+        <img 
+        className='hidden md:inline-flex h-32 lg:h-full'
+        src="http://accountabilitylab.org/wp-content/uploads/2020/03/Medium-logo.png" 
+        alt="" />
+      </div>
      </div>
         
     </div>
