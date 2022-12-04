@@ -12,6 +12,19 @@ export default function  Home () {
       </Head>
 
      <Header/>
+
+     <div>
+      <div className='px-10 space-x-5'>
+        <h1 className='text-6xl max-w-xl font-serif'>
+          <span className='underline decoration-black 
+          decoration-4'> Medium</span> is a place to write, read, and 
+          connect</h1>
+        <h2> It's easy and free to post your thinking on any
+          topic and connect with millions of readers.
+        </h2>
+      </div>
+      <div></div>
+     </div>
         
     </div>
   )
