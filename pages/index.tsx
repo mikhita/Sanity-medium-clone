@@ -2,6 +2,15 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
+import {sanityClient, urlFor} from "../sanity"
+import { Post } from '../typings'
+
+// interface Props{
+//   posts: [Post],
+
+// }
+
+// { posts }: Props
 
 export default function  Home () {
   return (
@@ -18,7 +27,7 @@ export default function  Home () {
      bg-yellow-400 border-y-black
      py-10
      lg:py-0'>
-      <div className='px-10 space-x-5'>
+      <div className='px-10 '>
         <h1 className='text-6xl max-w-xl font-serif'>
           <span className='underline decoration-black 
           decoration-4'> Medium</span> is a place to write, read, and 
@@ -39,4 +48,25 @@ export default function  Home () {
   )
 }
 
+export const getServerSideProps = async ()=> {
+  const query = `*[_type == "post"]{
+    _id,
+    title,
+    author->{
+    name,
+    image
+  },
+   description,
+   mainImage,
+   slug
+  }`;
+   const posts = await sanityClient.fetch(query);
+
+  return{
+    props:{
+      posts,
+    }
+  }
+}
+  
 
